@@ -1,33 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Nav from './components/Nav'
+import Header from './components/Header'
+import Experience from './components/Experience'
+import Education from './components/Education'
+import Skills from './components/Skills'
+import Projects from './components/Projects'
+import Footer from './components/Footer'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+      <Nav />
+      <main className="container mx-auto px-4 py-8 md:py-12 space-y-6 md:space-y-8">
+      <Header />
+
+        <section id="summary" className="bg-white shadow-lg rounded-xl p-6 lg:p-8">
+          <h2 className="font-semibold text-2xl mb-2 text-gray-900">Professional Summary</h2>
+          <p className="text-gray-700 leading-relaxed">
+          Results-driven Software Engineer with experience building and maintaining scalable web applications. Strong in React and TypeScript, delivering measurable impact through performance and UX improvements.
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      </section>
+
+      <Experience />
+      <Education />
+      <Skills />
+      <Projects />
+      <Footer />
+      </main>
     </>
   )
 }
