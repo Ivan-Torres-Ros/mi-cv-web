@@ -1,6 +1,8 @@
 import { FaBriefcase } from 'react-icons/fa'
+import { useInView } from '../hooks/useInView'
 
 export default function Experience() {
+  const anim = useInView<HTMLElement>()
   const jobs = [
     {
       role: 'Senior Software Engineer',
@@ -27,26 +29,30 @@ export default function Experience() {
   ]
 
   return (
-    <section id="experience" className="bg-white shadow-lg rounded-xl p-6 lg:p-8 transition-all duration-500 ease-in-out">
+    <section
+      id="experience"
+      ref={anim.ref}
+      className={`bg-white/5 border border-white/10 rounded-xl p-6 lg:p-8 transition-all duration-500 ease-in-out ${anim.isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+    >
       <div className="flex items-center gap-3 mb-4">
-        <FaBriefcase className="text-indigo-600" />
-        <h2 className="font-semibold text-2xl text-gray-900">Work Experience</h2>
+        <FaBriefcase className="text-brandOrange-500" />
+        <h2 className="font-semibold tracking-tight text-2xl" style={{ color: '#ff6a00' }}>Work Experience</h2>
       </div>
       <div className="grid gap-4 md:grid-cols-2">
         {jobs.map((job) => (
-          <article key={job.company} className="p-5 rounded-xl border border-gray-100 hover:shadow-2xl hover:scale-105 transition-transform duration-300">
+          <article key={job.company} className="p-5 rounded-xl border border-gray-100 transition-all duration-300 ease-smooth hover:shadow-2xl hover:scale-105 hover:-translate-y-1 hover:brightness-105">
             <header className="mb-2">
-              <h3 className="font-semibold text-lg text-gray-900">{job.role} — {job.company}</h3>
-              <p className="text-gray-600">{job.period}</p>
+              <h3 className="font-semibold text-lg text-white">{job.role} — {job.company}</h3>
+              <p className="text-white/80">{job.period}</p>
             </header>
-            <ul className="list-disc pl-5 text-gray-700 space-y-1">
+            <ul className="list-disc pl-5 text-white/90 space-y-1">
               {job.points.map((p) => (
                 <li key={p}>{p}</li>
               ))}
             </ul>
             <div className="mt-3 flex flex-wrap gap-2">
               {job.tech.map((t) => (
-                <span key={t} className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full inline-block text-sm">{t}</span>
+                <span key={t} className="bg-brandCyan-50 text-brandCyan-700 px-2 py-1 rounded-full inline-block text-sm">{t}</span>
               ))}
             </div>
           </article>

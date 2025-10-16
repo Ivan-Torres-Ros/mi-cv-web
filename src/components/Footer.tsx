@@ -1,10 +1,22 @@
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
+
 export default function Footer() {
   return (
     <footer className="text-center text-gray-600 py-6">
-      <p>
-        © {new Date().getFullYear()} Your Name —
-        <a className="text-indigo-600 hover:underline ml-1" href="mailto:you@email.com">Contact</a>
-      </p>
+      <div className="flex flex-col items-center gap-2">
+        <p>
+          © {new Date().getFullYear()} Your Name —
+          <a className="text-indigo-600 hover:underline ml-1" href="mailto:you@email.com">Contact</a>
+        </p>
+        <div className="flex items-center gap-4">
+          <a href="https://github.com/yourusername" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-indigo-600 hover:underline">
+            <FaGithub /> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-indigo-600 hover:underline">
+            <FaLinkedin /> LinkedIn
+          </a>
+        </div>
+      </div>
     </footer>
   )
 }

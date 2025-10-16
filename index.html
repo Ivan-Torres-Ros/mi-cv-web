@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,13 +9,28 @@
     <meta name="author" content="Torres" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="apple-touch-icon" href="/vite.svg" />
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Outfit (titulares) + Inter (cuerpo) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
-  <body class="font-sans antialiased bg-white">
-    <div id="root" class="min-h-screen text-gray-900"></div>
+  <body class="font-sans antialiased leading-relaxed text-white bg-brandNavy-900">
+    <!-- Fallback gradient layer to guarantee visible change (bypasses any Tailwind caching) -->
+    <div aria-hidden="true" class="fixed inset-0 -z-20 pointer-events-none" style="background: linear-gradient(135deg,#121b36 0%, #1a274d 40%, #24366a 100%);"></div>
+    <!-- Background decor: subtle blobs and neon-like glow -->
+    <div aria-hidden="true" class="fixed inset-0 -z-10 pointer-events-none">
+      <div class="absolute -top-32 left-1/3 h-[520px] w-[520px] rounded-full bg-brandCyan-200 blur-3xl opacity-25 animate-[float-slow_14s_linear_infinite_alternate]" style="filter:drop-shadow(0_0_30px_rgba(18,181,209,0.18))"></div>
+      <div class="absolute -bottom-24 right-1/4 h-[460px] w-[460px] rounded-full bg-brandOrange-200 blur-3xl opacity-20 animate-[float-slow_18s_linear_infinite_alternate]" style="filter:drop-shadow(0_0_26px_rgba(255,106,0,0.18))"></div>
+      <div class="absolute top-1/3 -left-24 h-[320px] w-[320px] rounded-full bg-brandNavy-400 blur-3xl opacity-10 animate-[rotate-slower_40s_linear_infinite] mix-blend-multiply"></div>
+      <div class="absolute bottom-1/3 right-10 h-1 w-1 rounded-full bg-brandCyan-400 animate-[glow-pulse_3s_ease-in-out_infinite]"></div>
+      <div class="absolute bottom-1/3 right-16 h-1 w-1 rounded-full bg-brandOrange-400 animate-[glow-pulse_2.6s_ease-in-out_infinite]"></div>
+    </div>
+    <!-- Fondos sutiles: blobs con baja opacidad detrás del contenido -->
+    <div aria-hidden="true" class="fixed inset-0 -z-10 pointer-events-none">
+      <div class="absolute -top-24 left-1/2 h-[480px] w-[480px] -translate-x-1/2 rounded-full blur-3xl opacity-30 bg-indigo-200"></div>
+      <div class="absolute -bottom-24 right-10 h-[360px] w-[360px] rounded-full blur-3xl opacity-20 bg-blue-200"></div>
+    </div>
+    <div id="root" class="min-h-screen"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

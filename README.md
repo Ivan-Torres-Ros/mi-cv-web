@@ -1,73 +1,96 @@
-# React + TypeScript + Vite
+<div align="center">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# CV Web — Iván Torres Ros
 
-Currently, two official plugins are available:
+Una web de currículum moderna, rápida y accesible, construida con React, TypeScript y TailwindCSS. Diseño visual contundente en azul marino y naranja, animaciones sutiles y navegación suave para comunicar profesionalidad y energía.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+</div>
 
-## React Compiler
+## ✨ Características
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- UI limpia y responsive (móvil, tablet y escritorio)
+- Tema visual: azul marino + acentos naranja/cian
+- Modo oscuro forzado para máximo contraste (opcional con toggle)
+- Hero con nombre y CTA de contacto (Email, GitHub, LinkedIn)
+- Secciones: Summary, Experience, Education, Skills, Projects, Footer
+- Aparición on-scroll (fade/slide) y micro‑interacciones al hover
+- Fondo con gradientes y blobs decorativos de baja distracción
+- Código en TypeScript, estilos con TailwindCSS 4
 
-## Expanding the ESLint configuration
+## 🧱 Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React 19 + Vite 7
+- TypeScript 5
+- TailwindCSS 4
+- React Icons
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Empezar
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+```bash
+# 1) Instalar dependencias
+npm install
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# 2) Servidor de desarrollo
+npm run dev
+
+# 3) Build de producción
+npm run build
+
+# 4) Previsualizar build
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Visita `http://localhost:5173/` para ver la web en desarrollo.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📁 Estructura principal
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+mi-cv-web/
+├─ src/
+│  ├─ components/
+│  │  ├─ Header.tsx        # Hero (nombre, contacto, chips)
+│  │  ├─ Nav.tsx           # Navbar sticky
+│  │  ├─ Experience.tsx    # Experiencia
+│  │  ├─ Education.tsx     # Educación
+│  │  ├─ Skills.tsx        # Skills con barras animadas
+│  │  ├─ Projects.tsx      # Proyectos con enlaces
+│  │  └─ Footer.tsx        # Contacto adicional
+│  ├─ hooks/useInView.ts   # Hook de aparición on‑scroll
+│  ├─ App.tsx              # Layout y secciones
+│  ├─ index.css            # Import Tailwind y animaciones clave
+│  └─ main.tsx             # Bootstrap de React
+├─ index.html              # Gradiente/base visual
+└─ tailwind.config.js      # Paleta y tipografías
+```
+
+## 🎨 Personalización rápida
+
+- Colores: `tailwind.config.js` (paletas `brandNavy`, `brandOrange`, `brandCyan`)
+- Tipografías: `index.html` (Google Fonts: Outfit + Inter)
+- Forzar/alternar modo oscuro: `Nav.tsx` (clase `dark` en `<html>`) 
+- Barras de Skills: `Skills.tsx` (`level` y color)
+
+## 🧩 Animaciones y efectos
+
+- `useInView` activa fade/slide en secciones al entrar en viewport.
+- Hover de tarjetas con `scale` + `shadow` + brillo suave.
+- Blobs decorativos en `index.html` con animaciones muy lentas.
+
+## 📦 Deploy
+
+Puedes desplegarlo en cualquier hosting estático (Netlify, Vercel, GitHub Pages). Para Vercel/Netlify simplemente conecta el repositorio y configura el comando de build `npm run build` y la carpeta `dist` como salida.
+
+## 🔧 Scripts útiles
+
+- `npm run dev` – entorno de desarrollo
+- `npm run build` – compilación de producción
+- `npm run preview` – servidor para revisar la build
+- `npm run lint` – linting del proyecto
+
+## 📜 Licencia
+
+Este proyecto es de uso personal. Si te sirve de inspiración, referencia la autoría.
+
+---
+
+Made with ❤️ using React, TypeScript y TailwindCSS.
