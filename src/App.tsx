@@ -1,5 +1,5 @@
 import Nav from './components/Nav'
-import Header from './components/Header'
+import Hero from './components/Hero'
 import Experience from './components/Experience'
 import Education from './components/Education'
 import Skills from './components/Skills'
@@ -17,8 +17,8 @@ function App() {
     <>
       <Nav />
       {isClient && <ParticleBackground />}
+      <Hero />
       <main className="container mx-auto px-4 py-8 md:py-12 space-y-6 md:space-y-8 dark:text-gray-100">
-      <Header />
 
         <section
           id="summary"
