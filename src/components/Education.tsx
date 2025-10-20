@@ -1,41 +1,75 @@
-import { FaGraduationCap } from 'react-icons/fa'
-import { useInView } from '../hooks/useInView'
+import { motion } from 'framer-motion'
 
 export default function Education() {
-  const anim = useInView<HTMLElement>()
-  const schools = [
-    {
-      degree: 'B.Sc. in Computer Science',
-      school: 'Tech University',
-      period: '2016 — 2020',
-      notes: ['GPA: 3.8/4.0', 'Relevant courses: Algorithms, Databases, Web Dev'],
-    },
+  const courses = [
+    'DSA I & II',
+    'Algorithm Design', 
+    'Object-Oriented Programming (Java)',
+    'Operating Systems',
+    'Software Engineering',
+    'Databases',
+    'Parallel & Distributed Programming',
+    'Machine Learning / AI'
   ]
 
   return (
-    <section
-      id="education"
-      ref={anim.ref}
-      className={`bg-white/5 border border-white/10 rounded-xl p-6 lg:p-8 transition-all duration-500 ease-in-out ${anim.isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
-    >
-      <div className="flex items-center gap-3 mb-4">
-        <FaGraduationCap className="text-brandOrange-500" />
-        <h2 className="font-semibold tracking-tight text-2xl" style={{ color: '#ff6a00' }}>Education</h2>
-      </div>
-      <div className="grid gap-4">
-        {schools.map((s) => (
-          <article key={s.school} className="p-5 rounded-xl border border-gray-100 hover:shadow-2xl hover:scale-105 transition-transform duration-300">
-            <header className="mb-2">
-              <h3 className="font-semibold text-lg text-white">{s.degree} — {s.school}</h3>
-              <p className="text-white/80">{s.period}</p>
-            </header>
-            <ul className="list-disc pl-5 text-gray-700 space-y-1">
-              {s.notes.map((n) => (
-                <li key={n} className="marker:text-brandOrange-500">{n}</li>
+    <section id="education" className="bg-slate-900/60 shadow-none rounded-xl p-6 lg:p-8">
+      <div className="container mx-auto px-4">
+        <h2 className="text-center text-indigo-400 text-2xl md:text-3xl font-extrabold tracking-wider mb-10">
+          EDUCATION
+        </h2>
+
+        {/* Main Education Card */}
+        <motion.div 
+          className="max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.div 
+            className="bg-gray-800 rounded-xl p-8 shadow-lg border border-gray-700"
+            whileHover={{ y: -5, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+          >
+            {/* University & Location */}
+            <h3 className="text-white text-xl md:text-2xl font-bold mb-2">
+              Pompeu Fabra University | Barcelona, Spain
+            </h3>
+            
+            {/* Degree */}
+            <h4 className="text-white text-lg md:text-xl font-semibold mb-3">
+              Bachelor's Degree in Computer Science and Engineering
+            </h4>
+            
+            {/* Date */}
+            <p className="text-gray-400 text-base mb-8">
+              Expected June 2027
+            </p>
+
+            {/* Relevant Courses Badges */}
+            <motion.div 
+              className="flex justify-center flex-wrap gap-3"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              {courses.map((course, index) => (
+                <motion.span 
+                  key={course} 
+                  className="px-3 py-1 rounded-full bg-gray-700/50 text-gray-300 text-sm font-medium"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  {course}
+                </motion.span>
               ))}
-            </ul>
-          </article>
-        ))}
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   )

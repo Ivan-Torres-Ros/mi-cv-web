@@ -2,19 +2,20 @@
 
 # CV Web — Iván Torres Ros
 
-Una web de currículum moderna, rápida y accesible, construida con React, TypeScript y TailwindCSS. Diseño visual contundente en azul marino y naranja, animaciones sutiles y navegación suave para comunicar profesionalidad y energía.
+Una web de currículum moderna, rápida y accesible, construida con React, TypeScript y TailwindCSS. Diseño minimalista con fondo oscuro, tipografía destacada y color de acento vibrante (índigo) para comunicar profesionalidad y modernidad.
 
 </div>
 
 ## ✨ Características
 
 - UI limpia y responsive (móvil, tablet y escritorio)
-- Tema visual: azul marino + acentos naranja/cian
-- Modo oscuro forzado para máximo contraste (opcional con toggle)
-- Hero con nombre y CTA de contacto (Email, GitHub, LinkedIn)
+- Tema visual: fondo oscuro + acentos índigo vibrantes
+- Hero Section minimalista con foto de perfil circular
+- Navegación suave con enlaces a secciones (Experience, Skills, Education, Projects, Contact)
+- Enlaces sociales: GitHub, LinkedIn, Email, Instagram
 - Secciones: Summary, Experience, Education, Skills, Projects, Footer
 - Aparición on-scroll (fade/slide) y micro‑interacciones al hover
-- Fondo con gradientes y blobs decorativos de baja distracción
+- Fondo con partículas animadas y efectos visuales sutiles
 - Código en TypeScript, estilos con TailwindCSS 4
 
 ## 🧱 Stack
@@ -48,13 +49,14 @@ Visita `http://localhost:5173/` para ver la web en desarrollo.
 mi-cv-web/
 ├─ src/
 │  ├─ components/
-│  │  ├─ Header.tsx        # Hero (nombre, contacto, chips)
+│  │  ├─ Hero.tsx          # Hero Section minimalista (foto, nombre, enlaces)
 │  │  ├─ Nav.tsx           # Navbar sticky
 │  │  ├─ Experience.tsx    # Experiencia
 │  │  ├─ Education.tsx     # Educación
 │  │  ├─ Skills.tsx        # Skills con barras animadas
 │  │  ├─ Projects.tsx      # Proyectos con enlaces
-│  │  └─ Footer.tsx        # Contacto adicional
+│  │  ├─ Footer.tsx        # Contacto adicional
+│  │  └─ ParticleBackground.tsx # Fondo con partículas animadas
 │  ├─ hooks/useInView.ts   # Hook de aparición on‑scroll
 │  ├─ App.tsx              # Layout y secciones
 │  ├─ index.css            # Import Tailwind y animaciones clave
@@ -66,15 +68,18 @@ mi-cv-web/
 ## 🎨 Personalización rápida
 
 - Colores: `tailwind.config.js` (paletas `brandNavy`, `brandOrange`, `brandCyan`)
+- Hero Section: `Hero.tsx` (foto, nombre, descripción, enlaces sociales)
 - Tipografías: `index.html` (Google Fonts: Outfit + Inter)
 - Forzar/alternar modo oscuro: `Nav.tsx` (clase `dark` en `<html>`) 
 - Barras de Skills: `Skills.tsx` (`level` y color)
+- Fondo de partículas: `ParticleBackground.tsx` (efectos visuales)
 
 ## 🧩 Animaciones y efectos
 
 - `useInView` activa fade/slide en secciones al entrar en viewport.
 - Hover de tarjetas con `scale` + `shadow` + brillo suave.
-- Blobs decorativos en `index.html` con animaciones muy lentas.
+- Partículas animadas en el fondo con `ParticleBackground.tsx`.
+- Transiciones suaves en enlaces sociales y navegación.
 
 ## 📦 Deploy
 

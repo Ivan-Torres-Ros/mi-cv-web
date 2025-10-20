@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 export default function Header() {
   return (
-    <section id="home" className="bg-transparent shadow-none rounded-xl p-6 lg:p-8">
+    <section id="home" className="bg-slate-900/60 shadow-none rounded-xl p-6 lg:p-8">
       <div className="flex flex-col items-center text-center gap-5">
         {/* Avatar opcional: pon una imagen en public/avatar.jpg si quieres mostrarla */}
         <img
