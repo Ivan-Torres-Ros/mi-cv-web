@@ -9,17 +9,19 @@ export default function Nav() {
   ]
 
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur bg-slate-900/90 border-b border-indigo-400/30 text-white">
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+    <nav className="sticky top-0 z-50 backdrop-blur bg-slate-900/90 border-b border-indigo-400/30 text-white h-16">
+      <div className="container mx-auto px-4 h-full flex items-center justify-between">
         <a 
           href="#hero" 
-          className="flex items-center hover:opacity-80 transition-opacity duration-300 cursor-pointer"
+          className="flex items-center hover:opacity-80 transition-opacity duration-300 cursor-pointer h-12"
         >
-          <img 
-            src="/logo.png" 
-            alt="TR Logo" 
-            className="h-8 w-auto"
-          />
+          <div className="h-12 flex items-center">
+            <img 
+              src="/logo.png" 
+              alt="TR Logo" 
+              className="max-h-30 w-auto hover:scale-105 transition-transform duration-300 object-contain"
+            />
+          </div>
         </a>
         <ul className="flex gap-4 text-sm">
           {links.map((l) => (
