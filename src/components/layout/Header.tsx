@@ -16,13 +16,13 @@ export default function Header() {
           Results-driven Software Engineer focused on building reliable, performant, and delightful user experiences.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <a href="mailto:you@email.com" className="inline-flex items-center gap-2 hover:underline transition-all duration-300">
+          <a href="mailto:torresrosivan@gmail.com" className="inline-flex items-center gap-2 hover:underline transition-all duration-300">
             <MdEmail className="text-xl text-brandOrange-500" /> <span className="text-brandOrange-600">Email</span>
           </a>
-          <a href="https://github.com/yourusername" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:underline transition-all duration-300">
+          <a href="https://github.com/Ivan-Torres-Ros" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:underline transition-all duration-300">
             <FaGithub className="text-xl text-brandCyan-500" /> <span className="text-brandCyan-600">GitHub</span>
           </a>
-          <a href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:underline transition-all duration-300">
+          <a href="https://www.linkedin.com/in/ivantorresingeniero/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:underline transition-all duration-300">
             <FaLinkedin className="text-xl text-brandCyan-500" /> <span className="text-brandCyan-600">LinkedIn</span>
           </a>
         </div>
